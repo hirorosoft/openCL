@@ -17,6 +17,13 @@ void Idle(void) {
 
 }
 
+void timer(int value) {
+	glutPostRedisplay();
+
+	glutTimerFunc(1000 / 60, timer, 0);
+
+}
+
 
 int main(int argc, char* argv[]) {
 
@@ -33,8 +40,8 @@ int main(int argc, char* argv[]) {
 
 	// コールバック関数登録
 	glutDisplayFunc(display);
-	glutIdleFunc(Idle);
-
+	//	glutIdleFunc(Idle);
+	glutTimerFunc(0, timer, 0);
 
 	glutMainLoop();
 
