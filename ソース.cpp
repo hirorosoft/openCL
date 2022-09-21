@@ -4,6 +4,8 @@
 int windowWidth = 800;
 int windowHeight = 600;
 
+bool keys[256];
+
 
 void display(void) {
 
@@ -22,7 +24,9 @@ void display(void) {
 	glTranslatef(windowWidth / 2, windowHeight / 2, 0);
 
 	static float angle;
-	angle++;
+	//angle++;
+	if (keys['d'])	angle++;
+	if (keys['a'])	angle--;
 
 
 	glRotatef(angle, 0, 0, 1);
@@ -53,7 +57,7 @@ void timer(int value) {
 
 // ウィンドウサイズが変わったら走る
 void reshape(int width, int height) {
-	printf("reshape: width:%d height: %d", width, height);
+//	printf("reshape: width:%d height: %d", width, height);
 
 	glViewport(0, 0, width, height);
 
@@ -63,6 +67,22 @@ void reshape(int width, int height) {
 
 
 }
+
+void keyboard(unsigned char key, int x, int y) {
+	if (key == 0x1b) exit(0);
+	
+	printf("keyboard: key:%c(%#x)\n", key, key);
+	keys[key] = true;
+
+}
+
+void keyboardUp(unsigned char key, int x, int y) {
+
+	printf("keyboardUp: key:%c(%#x)\n", key, key);
+	keys[key] = false;
+
+}
+
 
 int main(int argc, char* argv[]) {
 
@@ -83,6 +103,13 @@ int main(int argc, char* argv[]) {
 	glutTimerFunc(0, timer, 0);
 
 	glutReshapeFunc(reshape);
+
+	// キーボードフック
+	glutKeyboardFunc(keyboard);
+	glutKeyboardUpFunc(keyboardUp);
+
+	glutIgnoreKeyRepeat(GL_TRUE);	// キーリピート抑制
+
 	glutMainLoop();
 
 }
