@@ -1,8 +1,14 @@
 #include <stdio.h>
+
+#include "glm\glm.hpp"
 #include "glut.h"
 
-int windowWidth = 800;
-int windowHeight = 600;
+using namespace glm;
+
+ivec2 windowSize = { 800, 600 };
+
+//int windowWidth = 800;
+//int windowHeight = 600;
 
 bool keys[256];
 
@@ -15,13 +21,13 @@ void display(void) {
 	// éÀâeÉÇÅ[Éh	
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	gluOrtho2D(0, windowWidth, windowHeight, 0);
+	gluOrtho2D(0, windowSize.x, windowSize.y, 0);
 
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glTranslatef(windowWidth / 2, windowHeight / 2, 0);
+	glTranslatef(windowSize.x / 2, windowSize.y / 2, 0);
 
 	static float angle;
 	//angle++;
@@ -61,8 +67,10 @@ void reshape(int width, int height) {
 
 	glViewport(0, 0, width, height);
 
-	windowWidth = width;
-	windowHeight = height;
+	windowSize = ivec2(width, height);
+
+//	windowWidth = width;
+//	windowHeight = height;
 
 
 
@@ -93,7 +101,7 @@ int main(int argc, char* argv[]) {
 
 	// à»â∫ÅAñ≥Ç≠ÇƒÇ‡OK
 	glutInitWindowPosition(640, 0);
-	glutInitWindowSize(windowWidth, windowHeight);
+	glutInitWindowSize(windowSize.x, windowSize.y);
 
 	glutCreateWindow("Title");
 
