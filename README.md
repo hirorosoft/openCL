@@ -1,4 +1,4 @@
-# openCL
+# openCL 1.1
 
 セットアップ
 https://gameprogrammingunit.web.fc2.com/gl/index.html
