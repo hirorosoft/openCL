@@ -2,6 +2,8 @@
 
 #include "glm\glm.hpp"
 #include "glut.h"
+#include "font.h"
+
 
 using namespace glm;
 
@@ -41,6 +43,13 @@ void display(void) {
 
 
 	glutWireTeapot(1);
+	fontSetColor(0, 0xff, 0);
+	fontBegin();
+	fontSetPosition(0, windowSize.y - fontGetSize() * 1.5);
+	fontSetSize(FONT_DEFAULT_SIZE / 2);
+	fontDraw("angle:%f", angle);
+	fontEnd();
+
 
 	// glFlush()
 	glutSwapBuffers();
@@ -79,14 +88,14 @@ void reshape(int width, int height) {
 void keyboard(unsigned char key, int x, int y) {
 	if (key == 0x1b) exit(0);
 	
-	printf("keyboard: key:%c(%#x)\n", key, key);
+	//printf("keyboard: key:%c(%#x)\n", key, key);
 	keys[key] = true;
 
 }
 
 void keyboardUp(unsigned char key, int x, int y) {
 
-	printf("keyboardUp: key:%c(%#x)\n", key, key);
+	//printf("keyboardUp: key:%c(%#x)\n", key, key);
 	keys[key] = false;
 
 }
