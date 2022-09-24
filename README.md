@@ -4,6 +4,12 @@
 https://gameprogrammingunit.web.fc2.com/gl/index.html
 
 
+開発メモ
+
+#pragma once
+2重インクルード防ぐ
+
+
 
 TIPS
 

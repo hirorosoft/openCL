@@ -128,10 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="font.cpp" />
+    <ClCompile Include="glKeybord.cpp" />
+    <ClCompile Include="glWindow.cpp" />
     <ClCompile Include="ソース.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="font.h" />
+    <ClInclude Include="glKeybord.h" />
+    <ClInclude Include="glWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
