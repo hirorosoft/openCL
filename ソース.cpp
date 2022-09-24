@@ -6,22 +6,8 @@
 #include "glWindow.h"
 #include "glKeybord.h"
 
-//using namespace glm;
-
-
-// ƒAƒCƒhƒ‹ŠÖ”
-void Idle(void) {
-	glutPostRedisplay();
-
-}
-
-
-
 int main(int argc, char* argv[]) {
-
 	initWindow(argc, argv);
 	initKeybord();
-
 	glutMainLoop();
-
 }

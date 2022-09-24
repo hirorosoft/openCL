@@ -3,11 +3,15 @@
 セットアップ
 https://gameprogrammingunit.web.fc2.com/gl/index.html
 
+プログラムを配布する場合、必要なのは、"glut32.dll" のみ
+
 
 開発メモ
 
 #pragma once
 2重インクルード防ぐ
+
+
 
 
 

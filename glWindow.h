@@ -13,5 +13,6 @@ extern  ivec2 windowSize;
 
 void display(void);
 void timer(int value);
+void Idle(void);
 void initWindow(int argc, char* argv[]);
 void reshape(int width, int height);

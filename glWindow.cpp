@@ -49,6 +49,11 @@ void display(void) {
 
 }
 
+// ƒAƒCƒhƒ‹ŠÖ”
+//void Idle(void) {
+//	glutPostRedisplay();
+//}
+
 void timer(int value) {
 	glutPostRedisplay();
 	glutTimerFunc(1000 / 60, timer, 0);
