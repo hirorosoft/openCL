@@ -5,6 +5,18 @@ https://gameprogrammingunit.web.fc2.com/gl/index.html
 
 プログラムを配布する場合、必要なのは、"glut32.dll" のみ
 
+openAL
+https://www.openal.org/downloads/
+
+Linker
+
+リンカー、入力、
+C:\Program Files (x86)\OpenAL 1.1 SDK\libs\Win32\OpenAL32.lib
+
+C/C++
+追加のインクルードファイル
+C:\Program Files (x86)\OpenAL 1.1 SDK\include
+
 
 開発メモ
 

@@ -4,11 +4,24 @@
 #include "glut.h"
 #include "glKeybord.h"
 
- bool keys[256];
+#include "audio.h"
 
+
+bool keys[256];
 
 void keyboard(unsigned char key, int x, int y) {
-	if (key == 0x1b) exit(0);
+
+	switch (key) {
+	case 0x1b:
+		exit(9);
+		break;
+	case 'p':
+		audioPlay();
+		break;
+	case 's':
+		audioStop();
+		break;
+	}
 
 	//printf("keyboard: key:%c(%#x)\n", key, key);
 	keys[key] = true;

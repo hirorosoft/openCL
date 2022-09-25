@@ -22,7 +22,7 @@ void display(void) {
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
-	glTranslatef(windowSize.x / 2, windowSize.y / 2, 0);
+	glTranslatef(windowSize.x / 2.0, windowSize.y / 2.0, 0);
 
 	static float angle;
 
@@ -33,7 +33,7 @@ void display(void) {
 
 	glRotatef(angle, 0, 0, 1);
 
-	glScaled(256, 256, 1);
+	glScaled(256, -256, 1);
 
 
 	glutWireTeapot(1);
